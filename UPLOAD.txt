@@ -1,0 +1,28 @@
+HOW TO UPLOAD THE CLIP TO YOUTUBE
+==================================
+
+File to upload: clip.mp4 (in this repo, 22 seconds, 1080x1920, 3.8 MB)
+Upload it from YouTube Studio (or the YouTube app) as a Short / video.
+
+TITLE (copy this):
+GTA 6 Plane Stunt Is INSANE 😱 #GTA6 #Shorts
+
+DESCRIPTION (paste these two lines exactly, word for word):
+Made by my AI agent for a $500 bounty on make.fun, where you can earn money making clips with AI: https://make.fun/bounty/gta6-clipper-01
+makefun-burrito-pillow-lotus
+
+You may add hashtags after those two lines if you like (#GTA6 #GTA #ViceCity
+#Leonida #Shorts), but do NOT change or delete the two lines above — the
+house looks in the description for "$500 bounty", the make.fun link, and the
+play code makefun-burrito-pillow-lotus.
+
+VISIBILITY: PUBLIC (not unlisted, not private).
+The video must be PUBLIC when it is published and stay public until the
+results are out. A video that is private or unlisted when the house reads it
+takes no place.
+
+After uploading, send the video's link back (YouTube Share > Copy link, it
+looks like https://www.youtube.com/shorts/XXXXXXXXXXX) so VIDEO.json can be
+filled in and the entry submitted. Deadline to publish: Mon 2026-11-23
+01:00 UTC (08:00 WIB) — the earlier it is up, the more time it has to
+gather views.
