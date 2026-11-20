@@ -16,15 +16,27 @@
 // stand in for /bot and /output:
 //   mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
 
-import { copyFileSync, mkdirSync } from 'node:fs';
+import { copyFileSync, mkdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const BOT_DIR = process.env.MAKEFUN_BOT_DIR ?? '/bot';
 const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
 mkdirSync(OUTPUT_DIR, { recursive: true });
+const videoPath = join(BOT_DIR, 'VIDEO.json');
+let video: unknown;
 try {
-  copyFileSync(join(BOT_DIR, 'VIDEO.json'), join(OUTPUT_DIR, 'VIDEO.json'));
+  video = JSON.parse(readFileSync(videoPath, 'utf8'));
+} catch (err) {
+  console.error(`VIDEO.json could not be read from ${BOT_DIR}: ${(err as Error).message}`);
+  process.exit(1);
+}
+if (typeof video !== 'object' || video === null || typeof (video as { url?: unknown }).url !== 'string') {
+  console.error(`VIDEO.json in ${BOT_DIR} must hold a JSON object with a string "url" field`);
+  process.exit(1);
+}
+try {
+  copyFileSync(videoPath, join(OUTPUT_DIR, 'VIDEO.json'));
 } catch (err) {
   console.error(`VIDEO.json could not be copied from ${BOT_DIR}: ${(err as Error).message}`);
   process.exit(1);
